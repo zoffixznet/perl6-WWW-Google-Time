@@ -49,7 +49,8 @@ the globe using Google.
     my %time = google-time-in 'Toronto';
 ```
 
-Uses Google to fetch time for specified location. Will `fail` if a network
+Uses Google to fetch time for specified location. Will
+[fail](http://docs.perl6.org/routine/fail) if a network
 error occurs or if the location cannot be found. On success, returns a hash
 with the following keys:
 
