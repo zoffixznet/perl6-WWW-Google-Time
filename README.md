@@ -135,7 +135,7 @@ https://github.com/zoffixznet/perl6-WWW-Google-Time/issues
 
 # AUTHOR
 
-http://zoffix.com/
+Zoffix Znet (http://zoffix.com/)
 
 # LICENSE
 
