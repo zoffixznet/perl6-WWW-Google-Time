@@ -19,10 +19,10 @@ like %time<month>, /^[January|February|March|April|May|June|July|August|
 
 cmp-ok %time<month-day>, &infix:['>='],  1, 'month day is >= 1';
 cmp-ok %time<month-day>, &infix:['<='], 31, 'month day is <= 31';
-like   %time<time>,  /^ \d**2 ':' \d**2 ' ' [AM | PM] $/, 'time looks right';
-like   %time<tz>,    /^ [EST | EDT] $/, 'timezone looks right';
-is     %time<where>, 'Toronto, ON',      'where looks right';
-like   %time<year>,  /^20 \d**2 $/,      'year looks right';
+like   %time<time>,  /^ \d\d? ':' \d**2 ' ' [AM | PM] $/, 'time looks right';
+like   %time<tz>,    /^ [EST | EDT] $/,     'timezone looks right';
+like   %time<where>, /'Toronto, ON'/,       'where looks right';
+like   %time<year>,  /^20 \d**2 $/,         'year looks right';
 
 like %time<week-day>,
     /^[Sunday|Monday|Tuesday|Wednesday|Thursday|Friday|Saturday]$/,
