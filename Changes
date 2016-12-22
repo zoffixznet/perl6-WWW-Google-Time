@@ -1,5 +1,8 @@
 Revision History for 'WWW-Google-Time' Perl 6 Distribution
 
+1.002002  2016-12-22
+  - Fix crash on 12-PM times
+
 1.002001  2016-12-22
   - Added key with the DateTime object
 

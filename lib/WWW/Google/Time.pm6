@@ -35,7 +35,9 @@ sub google-time-in (Str:D $location) is export {
         year        => %time<year>,
         month       => %months{ %time<month> },
         day         => %time<month-day>,
-        hour        => $hour + (12 if %time<time>.match: /«PM»/),
+        hour        => (
+            $hour + (12 if $hour < 12 and %time<time>.match: /«PM»/)
+        ),
         minute      => $minute,
         second      => (59.999 min DateTime.now.utc.second),
         timezone    => (3600 * tz-offset-for %time<tz>).Int;
