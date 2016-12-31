@@ -31,6 +31,7 @@ sub google-time-in (Str:D $location) is export {
                     ~ "%time<month-day>, %time<year>";
 
     my ($hour, $minute) = %time<time>.match(/(\d+) ':' (\d+)/).caps».value».Int;
+    $hour -= 12 if $hour == 12 and %time<time>.match: /«AM»/;
     %time<DateTime> = DateTime.new:
         year        => %time<year>,
         month       => %months{ %time<month> },
